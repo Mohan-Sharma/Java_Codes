@@ -1,0 +1,10 @@
+#jdbc properties for type-4 driver of oracle
+#driverClass=oracle.jdbc.driver.OracleDriver
+#url=jdbc:oracle:thin:@localhost:1521:xe
+#user=system
+#password=oracle
+jdbc properties for type-4 driver of mysql
+driverClass=com.mysql.jdbc.Driver
+url=jdbc:mysql://localhost:3306/test
+user=root
+password=mysql
