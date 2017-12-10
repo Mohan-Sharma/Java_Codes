@@ -1,4 +1,4 @@
-package org.msharma.noviceproblems.exception.io;
+package org.msharma.noviceproblems.io;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

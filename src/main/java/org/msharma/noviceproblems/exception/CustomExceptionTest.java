@@ -1,36 +1,29 @@
 package org.msharma.noviceproblems.exception;
 
+/**
+ * Example of Custom Exception in Java
+ */
 class InvalidFormatException extends Exception
 {
-	public InvalidFormatException()
-	{
-		super();
-	}
 	public InvalidFormatException(String msg)
 	{
 		super(msg);
 	}
 }
-class CustomExceptionTest
+
+public class CustomExceptionTest
 {
-	public static void main(String arr[])
+	public static void main(String arr[]) throws InvalidFormatException
 	{
-		try
+		int a = Integer.parseInt(arr[0]);
+		int b = Integer.parseInt(arr[1]);
+		if(arr.length < 2)
 		{
-			int a=Integer.parseInt(arr[0]);
-			int b=Integer.parseInt(arr[1]);
-			if(arr.length<2)
-			{
-				throw(new InvalidFormatException("two arguments required"));
-			}
-			if(b==0)
-				throw(new InvalidFormatException("2nd argument not equals zero"));
-			int c=a/b;
-			System.out.println("result is "+c);
+			throw(new InvalidFormatException("two arguments required"));
 		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
+		if(b == 0)
+			throw(new InvalidFormatException("2nd argument not equals zero"));
+		int c = a/b;
+		System.out.println("result is " + c);
 	}
 }

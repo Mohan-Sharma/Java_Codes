@@ -1,4 +1,4 @@
-package org.msharma.noviceproblems.exception.jdbc;
+package org.msharma.noviceproblems.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

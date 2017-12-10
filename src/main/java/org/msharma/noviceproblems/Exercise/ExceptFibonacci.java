@@ -1,4 +1,4 @@
-package org.msharma.noviceproblems.exception.Exercise;
+package org.msharma.noviceproblems.Exercise;
 
 import java.util.HashSet;
 import java.util.Set;

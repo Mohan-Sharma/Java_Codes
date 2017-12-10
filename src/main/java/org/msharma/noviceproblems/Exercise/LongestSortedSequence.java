@@ -1,4 +1,4 @@
-package org.msharma.noviceproblems.exception.Exercise;
+package org.msharma.noviceproblems.Exercise;
 
 /**
  * Find the longest sorted sequence in given array

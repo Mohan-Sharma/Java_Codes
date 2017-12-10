@@ -1,4 +1,4 @@
-package org.msharma.noviceproblems.exception.gc_finalize;
+package org.msharma.noviceproblems.gc_finalize;
 
 /**
  * How GarbageCollector works

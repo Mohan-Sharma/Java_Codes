@@ -1,4 +1,4 @@
-package org.msharma.noviceproblems.exception.Exercise;
+package org.msharma.noviceproblems.Exercise;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
