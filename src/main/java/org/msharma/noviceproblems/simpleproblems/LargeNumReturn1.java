@@ -25,8 +25,8 @@ class LargeNumReturn1
 				
 		}
 		System.out.println("Largest Number="+max);
-		//System.out.println("Largest Number = "+a[(a.length)-1]);
-		//System.out.println("Second Largest Number = "+a[(a.length)-2]);
+		//System.out.println("Largest Number = "+methodOne[(methodOne.length)-1]);
+		//System.out.println("Second Largest Number = "+methodOne[(methodOne.length)-2]);
 
 		
 

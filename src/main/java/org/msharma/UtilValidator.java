@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 /**
  * @author Mohan Sharma Created on 1/20/2017.
- * Basic validation provider
+ * Custom Validation Utility.
  */
 public class UtilValidator {
 

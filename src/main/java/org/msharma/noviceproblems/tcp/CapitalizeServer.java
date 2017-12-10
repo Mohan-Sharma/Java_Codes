@@ -7,22 +7,22 @@ import java.net.Socket;
 
 /**
  * A server program which accepts requests from clients to
- * capitalize strings.  When clients connect, a new thread is
+ * capitalize strings.  When clients connect, methodOne new thread is
  * started to handle an interactive dialog in which the client
- * sends in a string and the server thread sends back the
+ * sends in methodOne string and the server thread sends back the
  * capitalized version of the string.
  *
  * The program is runs in an infinite loop, so shutdown in platform
- * dependent.  If you ran it from a console window with the "java"
+ * dependent.  If you ran it from methodOne console window with the "java"
  * interpreter, Ctrl+C generally will shut it down.
  */
 public class CapitalizeServer {
 
     /**
      * Application method to run the server runs in an infinite loop
-     * listening on port 9898.  When a connection is requested, it
-     * spawns a new thread to do the servicing and immediately returns
-     * to listening.  The server keeps a unique client number for each
+     * listening on port 9898.  When methodOne connection is requested, it
+     * spawns methodOne new thread to do the servicing and immediately returns
+     * to listening.  The server keeps methodOne unique client number for each
      * client that connects just to show interesting logging
      * messages.  It is certainly not necessary to do this.
      */
@@ -40,9 +40,9 @@ public class CapitalizeServer {
     }
 
     /**
-     * A private thread to handle capitalization requests on a particular
-     * socket.  The client terminates the dialogue by sending a single line
-     * containing only a period.
+     * A private thread to handle capitalization requests on methodOne particular
+     * socket.  The client terminates the dialogue by sending methodOne single line
+     * containing only methodOne period.
      */
     private static class Capitalizer extends Thread {
         private Socket socket;
@@ -56,7 +56,7 @@ public class CapitalizeServer {
 
         /**
          * Services this thread's client by first sending the
-         * client a welcome message then repeatedly reading strings
+         * client methodOne welcome message then repeatedly reading strings
          * and sending back the capitalized version of the string.
          */
         public void run() {
@@ -69,9 +69,9 @@ public class CapitalizeServer {
                         new InputStreamReader(socket.getInputStream()));
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
-                // Send a welcome message to the client.
+                // Send methodOne welcome message to the client.
                 out.println("Hello, you are client #" + clientNumber + ".");
-                out.println("Enter a line with only a period to quit\n");
+                out.println("Enter methodOne line with only methodOne period to quit\n");
 
                 // Get messages from the client, line by line; return them
                 // capitalized
@@ -88,14 +88,14 @@ public class CapitalizeServer {
                 try {
                     socket.close();
                 } catch (IOException e) {
-                    log("Couldn't close a socket, what's going on?");
+                    log("Couldn't close methodOne socket, what's going on?");
                 }
                 log("Connection with client# " + clientNumber + " closed");
             }
         }
 
         /**
-         * Logs a simple message.  In this case we just write the
+         * Logs methodOne simple message.  In this case we just write the
          * message to the server applications standard output.
          */
         private void log(String message) {

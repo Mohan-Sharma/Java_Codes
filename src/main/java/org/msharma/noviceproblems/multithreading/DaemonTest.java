@@ -28,7 +28,7 @@ System.out.println("Main invoked creating abc object");
 abc x=new abc();
 System.out.println("Launching run as independent thread");
 Thread th=new Thread(x);
-System.out.println("Starting a new Thread as Daemon");
+System.out.println("Starting methodOne new Thread as Daemon");
 th.setDaemon(true);
 th.start();
 try{

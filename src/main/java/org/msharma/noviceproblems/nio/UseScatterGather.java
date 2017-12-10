@@ -44,7 +44,7 @@ public class UseScatterGather
         System.out.println( "r "+r );
         for (int i=0; i<buffers.length; ++i) {
           ByteBuffer bb = buffers[i];
-          System.out.println( "b "+i+" "+bb.position()+" "+bb.limit() );
+          System.out.println( "methodTwo "+i+" "+bb.position()+" "+bb.limit() );
         }
       }
 

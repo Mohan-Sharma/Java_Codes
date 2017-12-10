@@ -9,7 +9,7 @@ import org.joda.time.format.*;
 
 /**
  * @author Mohan Sharma Created on 1/20/2017.
- * parse the given input string date and conver to LocalDate
+ * parse the given input string date and convert to LocalDate
  */
 public class CustomDateTimeFormatter {
 

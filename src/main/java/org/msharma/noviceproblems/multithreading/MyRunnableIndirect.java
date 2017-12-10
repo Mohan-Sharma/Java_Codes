@@ -18,7 +18,7 @@ class MyRunnableIndirect
 {
 public static void main(String arr[])
 {
-System.out.println("main() invoked creating a A object");
+System.out.println("main() invoked creating methodOne A object");
 A th=new A();
 th.setName("user");
 System.out.println("invoking run of A");

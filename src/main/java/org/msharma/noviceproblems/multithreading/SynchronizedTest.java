@@ -31,10 +31,10 @@ public static void main(String arr[])
 {
 System.out.println("Main invoked creating printer object");
 Printer p=new Printer();
-System.out.println("Creating a user thread");
+System.out.println("Creating methodOne user thread");
 User th=new User(p);
 th.start();
-System.out.println("main is printing a msg");
+System.out.println("main is printing methodOne msg");
 p.print("hello from main");
 }
 }

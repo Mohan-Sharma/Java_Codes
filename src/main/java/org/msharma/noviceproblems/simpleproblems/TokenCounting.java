@@ -7,7 +7,7 @@ class TokenCounting
 		try{
 		int count=0;
 
-		BufferedReader src=new BufferedReader(new InputStreamReader(new FileInputStream("AbstractTest.java")));
+		BufferedReader src=new BufferedReader(new InputStreamReader(new FileInputStream("some file")));
 			while(true)
 			{
 

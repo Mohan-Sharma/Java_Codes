@@ -3,7 +3,7 @@ package org.msharma.noviceproblems.io;
 import java.io.File;
 
 /**
- * Example to rename a file provide source and target file name as command line argument
+ * Example to rename methodOne file provide source and target file name as command line argument
  */
 class RenameFolder
 {

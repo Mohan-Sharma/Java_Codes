@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @author Mohan Sharma Created on 1/20/2017.
- * parse the given input string date and conver to LocalDate
+ * This class demonstrates how we can send generic error to view in Spring MVC.
  */
 @Getter
 public final class Result {

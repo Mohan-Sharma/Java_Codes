@@ -29,7 +29,7 @@ class God
 {
 	public static void main(String arr[]) throws Exception
 	{
-		System.out.println("Sending a mortal name markendey to earth");
+		System.out.println("Sending methodOne mortal name markendey to earth");
 		mortal a=new mortal("Markendey");
 		Thread.sleep(2000);
 		System.out.println("Life of markendey is over calling him back");
