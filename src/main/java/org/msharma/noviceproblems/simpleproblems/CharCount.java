@@ -1,25 +1,34 @@
-import java.util.*;
+package org.msharma.noviceproblems.simpleproblems;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * This Example demonstrates how to count the number of repeating characters.
+ */
 class CharCount
 {
-public static void main(String arr[])
-{
-String s="adhjashdjadjasff";
-Map<Character,Integer> map = new HashMap<Character,Integer>();
-for (int i = 0; i < s.length(); i++)
- {
-  char c = s.charAt(i);
-  if (map.containsKey(c)) 
-{
-    int cnt = map.get(c);
-    map.put(c, ++cnt);
+    public static void main(String arr[])
+    {
+        String input = "adhjashdjadjasff";
+        Map<Character,Integer> map = new HashMap<>();
+        for (int i = 0; i < input.length(); i++)
+        {
+            char c = input.charAt(i);
+            if (map.containsKey(c))
+            {
+                map.put(c, map.get(c) + 1);
+            }
+            else
+            {
+                map.put(c, 1);
+            }
+        }
 
-  }
-else 
-{
-    map.put(c, 1);
-  }
-System.out.println(c+"="+cnt); 
-}
-}
+        for(Map.Entry<Character, Integer> entry : map.entrySet())
+        {
+            System.out.println(entry.getKey() + " counts " +entry.getValue() + "times");
+        }
+    }
 
 }

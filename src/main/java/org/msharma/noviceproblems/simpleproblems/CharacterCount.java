@@ -1,14 +1,17 @@
-import java.util.*;
+package org.msharma.noviceproblems.simpleproblems;
+
+import java.util.Scanner;
+
+/**
+ * This Example demonstrates the how to find the length of string.
+ */
 class CharacterCount
 {
-public static void main(String arr[])
-{
-Scanner in=new Scanner(System.in);
-System.out.println("Enter the string..");
-String str=in.nextLine();
-String str1=str.trim();
-//System.out.println("no of character in the string"+str.length());
-char[] a=str1.toCharArray();
-System.out.println("No of character "+a.length);
-}
+	public static void main(String arr[])
+	{
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter the string..");
+		String str=in.nextLine();
+		System.out.println("No of character "+str.length());
+	}
 }

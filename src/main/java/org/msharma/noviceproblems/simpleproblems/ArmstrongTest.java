@@ -24,7 +24,7 @@ class ArmstrongTest
 		while(num > 0)
 		{
 			int rem = num % 10;
-			newNumberConstructed = newNumberConstructed+(int)Math.pow(rem,numberOfDigits);
+			newNumberConstructed = newNumberConstructed + (int)Math.pow(rem,numberOfDigits);
 			num = num / 10;
 		}
 		if(newNumberConstructed == originalNumber)
