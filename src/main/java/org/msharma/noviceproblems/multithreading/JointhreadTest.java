@@ -9,7 +9,7 @@ delay=r.nextInt(10);
 }
 public void run()
 {
-System.out.println("Unpredictable started");
+System.out.println("Joiner started");
 try
 {
 System.out.println("sleeping for "+delay+" secs");
@@ -23,7 +23,7 @@ class JointhreadTest
 {
 public static void main(String arr[])
 {
-System.out.println("Unpredictable started instantiating it");
+System.out.println("Joiner started instantiating it");
 Unpredictable r=new Unpredictable();
 System.out.println("Giving it 5 secs to complete it tasks");
 r.start();
@@ -36,12 +36,12 @@ catch(Exception e)
 System.out.println("master started checking if any thread is alive");
 if(r.isAlive())
 {
-System.out.println("Unpredictable is taking too much time interrupting it");
+System.out.println("Joiner is taking too much time interrupting it");
 r.interrupt();
 }
 else 
 {
-System.out.println("Unpredictable is completed in time");
+System.out.println("Joiner is completed in time");
 }
 }
 }

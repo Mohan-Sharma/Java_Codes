@@ -1,8 +1,8 @@
-// $Id$
+package org.msharma.noviceproblems.nio;// $Id$
 
-import java.io.*;
-import java.nio.*;
-import java.nio.channels.*;
+import java.io.RandomAccessFile;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
 public class UseMappedFile
 {
@@ -13,8 +13,7 @@ public class UseMappedFile
     RandomAccessFile raf = new RandomAccessFile( "usemappedfile.txt", "rw" );
     FileChannel fc = raf.getChannel();
 
-    MappedByteBuffer mbb = fc.map( FileChannel.MapMode.READ_WRITE,
-      start, size );
+    MappedByteBuffer mbb = fc.map( FileChannel.MapMode.READ_WRITE, start, size );
 
     mbb.put( 0, (byte)97 );
     mbb.put( 1023, (byte)122 );

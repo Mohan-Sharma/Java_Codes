@@ -1,9 +1,9 @@
-// $Id$
+package org.msharma.noviceproblems.nio;// $Id$
 
-import java.io.*;
-import java.net.*;
-import java.nio.*;
-import java.nio.channels.*;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 
 public class UseScatterGather
 {
@@ -24,7 +24,7 @@ public class UseScatterGather
     ssc.socket().bind( address );
 
     int messageLength =
-      firstHeaderLength + secondHeaderLength + bodyLength;
+            firstHeaderLength + secondHeaderLength + bodyLength;
 
     ByteBuffer buffers[] = new ByteBuffer[3];
     buffers[0] = ByteBuffer.allocate( firstHeaderLength );

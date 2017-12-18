@@ -1,10 +1,15 @@
-// $Id$
+package org.msharma.noviceproblems.nio;// $Id$
 
-import java.io.*;
-import java.net.*;
-import java.nio.*;
-import java.nio.channels.*;
-import java.util.*;
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.nio.ByteBuffer;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.Iterator;
+import java.util.Set;
 
 public class MultiPortEcho
 {
@@ -45,10 +50,13 @@ public class MultiPortEcho
         SelectionKey key = (SelectionKey)it.next();
 
         if ((key.readyOps() & SelectionKey.OP_ACCEPT)
-          == SelectionKey.OP_ACCEPT) {
+                == SelectionKey.OP_ACCEPT) {
           // Accept the new connection
-          ServerSocketChannel ssc = (ServerSocketChannel)key.channel();
-          SocketChannel sc = ssc.accept();
+          SocketChannel sc;
+          try (ServerSocketChannel ssc = (ServerSocketChannel) key.channel())
+          {
+            sc = ssc.accept();
+          }
           sc.configureBlocking( false );
 
           // Add the new connection to the selector
@@ -57,7 +65,7 @@ public class MultiPortEcho
 
           System.out.println( "Got connection from "+sc );
         } else if ((key.readyOps() & SelectionKey.OP_READ)
-          == SelectionKey.OP_READ) {
+                == SelectionKey.OP_READ) {
           // Read the data
           SocketChannel sc = (SocketChannel)key.channel();
 
@@ -85,9 +93,9 @@ public class MultiPortEcho
 
       }
 
-//System.out.println( "going to clear" );
-//      selectedKeys.clear();
-//System.out.println( "cleared" );
+      //System.out.println( "going to clear" );
+      //      selectedKeys.clear();
+      //System.out.println( "cleared" );
     }
   }
 

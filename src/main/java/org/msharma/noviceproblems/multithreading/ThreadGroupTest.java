@@ -1,50 +1,56 @@
-import java.util.*;
+package org.msharma.noviceproblems.multithreading;
+
+import java.util.Random;
+
 class Unpredictable extends Thread
 {
-int delay;
-public Unpredictable(ThreadGroup g,String name)
-{
-super(g,name);
-Random r=new Random();
-delay=r.nextInt(10);
-}
-public void run()
-{
-System.out.println(getName()+" is started");
-try{
-System.out.println("dnt disturb "+getName()+" sleeping for "+delay+" sec");
-Thread.sleep(delay*1000);
-System.out.println(getName()+" is feeling fresh");
-}
-catch(InterruptedException e){
-System.out.println(getName()+" is interrupted");
-}
-}
+	int delay;
+	public Unpredictable(ThreadGroup g,String name)
+	{
+		super(g,name);
+		Random r=new Random();
+		delay=r.nextInt(10);
+	}
+	public void run()
+	{
+		System.out.println(getName()+" started");
+		try
+		{
+			System.out.println(getName()+" sleeping for "+delay+" secs");
+			Thread.sleep(delay*1000);
+		}
+		catch(InterruptedException e)
+		{}
+	}
 }
 class ThreadGroupTest
 {
-public static void main(String arr[])
-{
-System.out.println("main Thread started creating object of Unpredicatble");
-ThreadGroup g=new ThreadGroup("lazy");
-Unpredictable th1=new Unpredictable(g,"child1");
-Unpredictable th2=new Unpredictable(g,"child2");
-Unpredictable th3=new Unpredictable(g,"child3");
-System.out.println("giving Unpredictable 5 sec to complete");
-try{
-th1.start();
-th2.start();
-th3.start();
-Thread.sleep(5000);
-}
-catch(Exception e){}
-System.out.println("Main woke up checking status of Unpredictable");
-if(g.activeCount()>0)
-{
-System.out.println("Unpredictable taking to much time calling interrupt");
-g.interrupt();
-}
-else
-System.out.println("Unpredictable completed within time");
-}
+	public static void main(String arr[])
+	{
+		System.out.println("JointhreadTest started creating threadGroup");
+		ThreadGroup g=new ThreadGroup("lazy");
+		System.out.println("Creating 3 Joiner threads and giving them 5 sec to complete");
+		Unpredictable r1=new Unpredictable(g,"child1");
+		Unpredictable r2=new Unpredictable(g,"child2");
+		Unpredictable r3=new Unpredictable(g,"child3");
+		r1.start();
+		r2.start();
+		r3.start();
+		try
+		{
+			Thread.sleep(5000);
+		}
+		catch(Exception e)
+		{}
+		System.out.println("master started checking if any thread is alive");
+		if(g.activeCount()>0)
+		{
+			System.out.println("Joiner is taking too much time interrupting it");
+			g.interrupt();
+		}
+		else
+		{
+			System.out.println("Joiner is completed in time");
+		}
+	}
 }
